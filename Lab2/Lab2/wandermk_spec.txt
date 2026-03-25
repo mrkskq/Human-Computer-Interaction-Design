@@ -1,0 +1,88 @@
+============================
+NAVBAR
+============================
+Brand: WanderMK
+Links: Home | Tours | Comments | Contact
+
+============================
+HERO SECTION
+============================
+Heading: Your Next Adventure Starts Here
+Subtext: Innovative tours, authentic experiences and expert support that makes a difference.
+Button 1: Explore Tours
+Button 2: Contact Us
+Background: background-hero.jpg
+Image: travel-hero.jpg
+
+============================
+TOURS SECTION
+============================
+Section Title: Our Tours
+
+Card 1:
+  Image: greece.jpg (alt: Greece Santorini)
+  Title: Greece – Santorini
+  Description: 7 nights on the most romantic island. Accommodation, transport and guide included.
+  Price: from €450 / person
+
+Card 2:
+  Image: italy.jpg (alt: Italy Rome Tuscany)
+  Title: Italy – Rome & Tuscany
+  Description: 10 nights through history. The Colosseum, Vatican and the Tuscan hills.
+  Price: from €620 / person
+
+Card 3:
+  Image: turkey.jpg (alt: Turkey Istanbul)
+  Title: Turkey – Istanbul
+  Description: 5 nights in the heart of Istanbul. Hagia Sophia, bazaars and a Bosphorus cruise.
+  Price: from €320 / person
+
+============================
+COMMENTS SECTION
+============================
+Section Title: What Travelers Say
+
+Comment 1:
+  Text: "The best trip of my life! The organization was perfect, the guide was fantastic."
+  Author: — Marija Kostovska
+
+Comment 2:
+  Text: "Greece was a dream! Everything was planned to the last detail, we had no worries."
+  Author: — Tone Ilievski
+
+Comment 3:
+  Text: "Very friendly team and excellent communication. I will return for another trip!"
+  Author: — Elena Ristovska
+
+============================
+CONTACT FORM
+============================
+Section Title: Contact Us
+Field 1: Full Name (placeholder: Your Name)
+Field 2: Email (placeholder: name@example.com)
+Field 3: Phone (placeholder: +389 70 123 456)
+Field 4: Destination (options: Select destination... | Greece – Santorini | Italy – Rome & Tuscany | Turkey – Istanbul | Other)
+Field 5: Message (placeholder: Your message...)
+Button: Send
+
+============================
+FOOTER
+============================
+Brand: WanderMK
+Tagline: Authentic travel experiences since 2010. Every journey tells a story.
+Quick Links: Home | Tours | Comments | Contact
+Contact Us:
+  Address: Partizanski blvd. 15, Skopje
+  Phone: +389 2 321 654
+  Email: info@wandermk.mk
+Copyright: © 2026 WanderMK. All rights reserved.
+
+============================
+COLORS
+============================
+Primary:       #6F4E37
+Accent:        #f4a261
+Background:    rgba(108,76,51,0.51)  — footer
+Comments bg:   rgba(108,61,22,0.2)   — comments section
+Quote border:  #f4a261
+Dividers:      #6F4E37
