@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+<!--NAVBAR-->
+<div class="container-fluid">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-danger" href="#">Cakery&Bakery</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add' %}">Add</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!--DIV-1-->
+<div class="container-flud bg-danger">
+    <div class="container">
+        <div class="row p-5">
+            <div class="col-6 my-auto text-white">
+                <h1>Explore the wonderland of tastes!</h1>
+                <p>Assignment for HCI Exam in September 2024</p>
+                <button class="btn btn-light">Get Started</button>
+                <button class="btn btn-outline-light">Learn More</button>
+            </div>
+            <div class="col-6">
+                <img src="../media/images/Screenshot_1.png" style="width: 75%">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--DIV-2-->
+<div class="container-flud">
+    <div class="container">
+        <div class="row p-5 text-center">
+            <div class="col-6 my-auto mx-auto">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis doloribus facere
+                    laudantium provident repudiandae sint temporibus! Assumenda error et, incidunt maxime nobis
+                    obcaecati."</p>
+                <div class="d-flex justify-content-center">
+                    <img src="../media/images/avatar_1.png" class="d-inline-block" style="width=10%">
+                    <p class="fw-bold my-auto m-2">John Doe / CEO, Cakery&Bakery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--DIv-3-->
+<div class="container">
+    <div class="row p-5 text-center">
+        <h1 class="text-danger">Products</h1>
+        <p>Add more products in the edit form!</p>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                {% for cake in cakes %}
+                <div class="card col-3 m-3">
+                    <img src="{{ cake.image.url }}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ cake.name }}</h5>
+                        <p class="card-text">{{ cake.description }}</p>
+                        <div class="d-flex justify-content-center">
+                            <img src="{{ cake.baker.image.url }}" class="d-inline-block" style="width=10%">
+                            <p class="card-text fw-bold m-1">{{ cake.baker.name }} {{ cake.baker.surname }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--FOOTER-->
+<div class="container-fluid  bg-danger">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid ">
+                <a class="navbar-brand text-white" href="#">Copyright &copy; HCI 2024</a>
+                <div class="d-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Terms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add' %}">Add</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+</body>
+</html>
