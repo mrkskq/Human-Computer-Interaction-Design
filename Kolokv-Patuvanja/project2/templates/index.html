@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+<!--NAVBAR-->
+<div class="container-fluid mb-5">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <button class="btn btn-light" style="border: 1px solid black" href="#">DNIChk TRAVEL</button>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item me-5"> <!--margin-end-->
+                            <a class="nav-link fw-bold" href="{% url 'add' %}">Add</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link" href="#">Service</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link" href="#">Destination</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link" href="#">Testimonial</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item me-5">
+                            <button class="btn btn-light" style="border: 1px solid black" href="#">Sign Up</button>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                EN
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">EN</a></li>
+                                <li><a class="dropdown-item" href="#">MK</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!--DIV-1-->
+<div class="container-fluid">
+    <div class="col text-center">
+        <p>Top Selling</p>
+        <h2 class="display-2 fw-bold">Top Destinations</h2>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            {% for travel in travels %}
+            <div class="card col-3 m-3 p-0">
+                <img src="{{ travel.image.url }}" class="card-img-top">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <p class="fw-bold">{{ travel.destination }}</p>
+                        <p>${{ travel.price }}k</p>
+                    </div>
+                    <p class="card-text">{{ travel.duration }} Days Trip</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
