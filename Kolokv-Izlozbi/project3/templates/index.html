@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #prv {
+            background: url("../media/images/main_header_bg-copyright (1).jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+<!--PRV DIV SO SLIKATA-->
+<div class="container-fluid mb-5" id="prv">
+    <div>
+        <img src="../media/images/logo-retina (1).png">
+    </div>
+    <h2 class="display-2 p-5 text-center text-white fw-bold" style="height:300px">Upcoming Events</h2>
+</div>
+
+<!--DIV SO IZLOZBITE-->
+<div class="container">
+    <div class="d-flex justify-content-end">
+        <a href="{% url 'add' %}" class="btn btn-warning m-3 text-white">Add New Exhibition</a>
+    </div>
+    {% for ex in exhibitions %}
+    <div class="row d-flex justify-content-between">
+        <div class="col-6 m-3">
+            <p>{{ ex.start_date }} - {{ ex.end_date }}</p>
+            <h2 style="fw-bold">{{ ex.title }}</h2>
+            <p>{{ ex.location }}</p>
+            <p>{{ ex.description }}</p>
+        </div>
+        <div class="col-4 m-3 d-flex justify-content-end">
+            <img src="{{ ex.artwork_set.first.image.url }}" style="width: 80%">
+            <!--deka vo exhibition ne cuvame direkno artwork, morat od artwork da ja zejme slikata-->
+            <!--to se prajt vaka so _set.first-->
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
